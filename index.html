@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Bungee|Bungee+Shade|Covered+By+Your+Grace" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('txt').innerHTML =
+                h + ":" + m + ":" + s;
+            var t = setTimeout(startTime, 1000);
+        }
+        function checkTime(i) {
+            if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
+            return i;
+        }
+    </script>
+    <title>Clock</title>
+</head>
+
+<body onload=startTime() class="page">
+    <h1 id="header">WOLF CLOCK</h1>
+    <div id="question">
+        <h2 id="header">What's the time now MR WOLF??</h2>
+        <h2 id="txt"></h2>
+    </div>
+    <p id="header">Be careful, do not touch Mr Wolf!</p>
+    <img src="wolf2.jpg" alt="">
+    <div id="settings">
+        <form action="app.js" method="get">
+            <label for="wake_up" id="wakeUpLabel">Set Wake Up Time:</label>
+            <select id="wake_up">
+                <option value="8-9am">8-9am</option>
+                <option value="9-10am">9-10am</option>
+                <option value="10-11am">10-11am</option>
+            </select>
+            <br>
+            <label for="lunch" id="lunchLabel">Set Lunch Time:</label>
+            <select id="lunch">
+                <option value="11-12pm">11-12pm</option>
+                <option value="12-1pm">12-1pm</option>
+                <option value="1-2pm">1-2pm</option>
+            </select>
+            <br>
+            <label for="dinner" id="dinnerLabel">Set Dinner Time:</label>
+            <select id="dinner">
+                <option value="6-7pm">6-7pm</option>
+                <option value="7-8pm">7-8pm</option>
+                <option value="8-9pm">8-9pm</option>
+            </select>
+            <button id="submit">PARTY TIME!</button>
+        </form>
+    </div>
+    <h3>&copy; Sandy the Squirrel</h3>
+    <script src="app.js"></script>
+</body>
+
+</html>
